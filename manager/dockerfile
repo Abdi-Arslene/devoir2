@@ -1,0 +1,15 @@
+FROM python:latest
+
+RUN pip3 install psycopg2
+RUN wget https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -P /
+RUN chmod +x /wait-for-it.sh
+ENTRYPOINT ["/wait-for-it.sh", "db:5432", "--"]
+
+ENV POSTGRES_USER root
+ENV POSTGRES_PASSWORD td
+ENV POSTGRES_DB exam
+ENV CSV_FILENAME data.csv
+
+COPY . /app
+
+CMD ["python","-m","app"]
