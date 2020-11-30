@@ -3,10 +3,6 @@ version: "3"
 services:
   db:
     image: "postgres:latest"
-    environment:
-      POSTGRES_USER: "root"
-      POSTGRES_PASSWORD: "td"
-      POSTGRES_DB: "exam"
   manage:
     build:
       context: "./manager"
