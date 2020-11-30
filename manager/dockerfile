@@ -10,6 +10,6 @@ ENV POSTGRES_PASSWORD td
 ENV POSTGRES_DB exam
 ENV CSV_FILENAME data.csv
 
-COPY . /app
+COPY . /exam
 
-CMD ["python","-m","app"]
+CMD ["python","-m","exam"]
